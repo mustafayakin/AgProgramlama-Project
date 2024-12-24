@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace TCPmesajuygulamasi
 {
     public partial class Form1 : Form
     {
-        string ID="0";
+        string kullanici_id;
         SqlConnection connection = new SqlConnection("server=localhost;database=agprogramlama;integrated security=True");
         public Form1()
         {
@@ -30,6 +31,22 @@ namespace TCPmesajuygulamasi
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
+        private string GetLocalIPAddress()
+        {
+            string ipAddress = "";
+            foreach (var ip in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                // IPv4 adresini alıyoruz.
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    ipAddress = ip.ToString();
+                    break;
+                }
+            }
+            return ipAddress;
+        }
+       
+
 
         private void login_Click(object sender, EventArgs e)
         {
@@ -47,15 +64,20 @@ namespace TCPmesajuygulamasi
             dr = komut.ExecuteReader();
             if (dr.Read())
             {
-                string hosgeldinMesaj = "Hoşgeldin " + dr.GetString(1).ToUpper() + "\nİyi Çalışmalar"; ID = dr.GetByte(0).ToString();
+                string hosgeldinMesaj = "Hoşgeldin " + dr.GetString(1).ToUpper() + "\nİyi Çalışmalar"; kullanici_id = dr.GetByte(0).ToString();
+                string ip = GetLocalIPAddress();
                 MessageBox.Show(hosgeldinMesaj, "Hoşgeldin!");
-                sorgu = "UPDATE users set isOnline = @isOnline WHERE id ="+dr.GetByte(0).ToString();
+                sorgu = "UPDATE users set isOnline = @isOnline, ipAddress=@ip WHERE id ="+dr.GetByte(0).ToString();
                 connection.Close();
                 komut = new SqlCommand(sorgu, connection);
                 komut.Parameters.AddWithValue("@isOnline", 1);
+                komut.Parameters.AddWithValue("@ip", ip);
                 connection.Open();
                 komut.ExecuteNonQuery();
                 connection.Close();
+                mainScreen main = new mainScreen(kullanici_id);
+                main.Show();
+                this.Hide();
             }
             else
             {

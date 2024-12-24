@@ -56,11 +56,12 @@ namespace TCPmesajuygulamasi
                 {
                     connection.Close();
                     string hashPass = HashPassword(sifre1.Text);
-                    sorgu = "INSERT INTO users(username,password,isOnline) VALUES (@username,@password,@isOnline)";
+                    sorgu = "INSERT INTO users(username,password,isOnline,port) VALUES (@username,@password,@isOnline,@port)";
                     cmd = new SqlCommand(sorgu, connection);
                     cmd.Parameters.AddWithValue("@username", textBox1.Text);
                     cmd.Parameters.AddWithValue("@password", hashPass);
                     cmd.Parameters.AddWithValue("@isOnline", 0);
+                    cmd.Parameters.AddWithValue("@port", numericUpDown1.Value.ToString());
                     connection.Open();
                     cmd.ExecuteNonQuery();
                     connection.Close();

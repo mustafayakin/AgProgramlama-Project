@@ -10,3 +10,6 @@ C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TC
 C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TCPmesajuygulamasi.exe
 C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TCPmesajuygulamasi.pdb
 C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TCPmesajuygulamasi.regs.resources
+C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TCPmesajuygulamasi.mainScreen.resources
+C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TCPmesajuygulamasi.withTCP.resources
+C:\Users\Mustafa\source\repos\TCPmesajuygulamasi\TCPmesajuygulamasi\obj\Debug\TCPmesajuygulamasi.updatePort.resources

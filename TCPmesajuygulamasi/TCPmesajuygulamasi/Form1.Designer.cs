@@ -99,6 +99,7 @@
             // 
             // login
             // 
+            this.login.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.login.Location = new System.Drawing.Point(144, 226);
             this.login.Name = "login";
@@ -114,7 +115,7 @@
             this.createAcoount.Location = new System.Drawing.Point(255, 226);
             this.createAcoount.Name = "createAcoount";
             this.createAcoount.Size = new System.Drawing.Size(172, 52);
-            this.createAcoount.TabIndex = 3;
+            this.createAcoount.TabIndex = 4;
             this.createAcoount.Text = "create a new account";
             this.createAcoount.UseVisualStyleBackColor = true;
             this.createAcoount.Click += new System.EventHandler(this.createAcoount_Click);

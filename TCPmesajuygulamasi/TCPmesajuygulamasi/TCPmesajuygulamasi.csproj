@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AES.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,18 @@
     <Compile Include="regs.Designer.cs">
       <DependentUpon>regs.cs</DependentUpon>
     </Compile>
+    <Compile Include="updatePort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updatePort.Designer.cs">
+      <DependentUpon>updatePort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="withTCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="withTCP.Designer.cs">
+      <DependentUpon>withTCP.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +96,12 @@
     </Compile>
     <EmbeddedResource Include="regs.resx">
       <DependentUpon>regs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updatePort.resx">
+      <DependentUpon>updatePort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="withTCP.resx">
+      <DependentUpon>withTCP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
